@@ -12,8 +12,8 @@ doit proc
 	
 	; ----------- Assembly Multiple Branches --------------
 
-	move eax,																			
-	cmp eax, 5
+	move eax, 3																			
+	cmp eax, 5		; 3 - 5 = -2 (signflag(1))(zeroflag(0))
 	jl lessThan5
 	je equalTo5
 	jg greaterThan5
@@ -22,12 +22,8 @@ lessThan5:
 	mov ebx, -1
 equalTo5:
 	mov ebx, 0
-greaterThanFive:
+greaterThan5:
 	mov ebx, 1
-
-
-
-
 
 
 	ret
