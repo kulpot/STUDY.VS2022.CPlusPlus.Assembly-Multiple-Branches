@@ -11,22 +11,28 @@ doit proc
 	; this is a comment i can type whatever i like after a semicolon and assembler will ignore it
 	
 	; ----------- Assembly Multiple Branches --------------
+	; combining conditional/unconditional branching statements
 
-	move eax, 3																			
+	;move eax, 3
+	;move eax, 5		; cmp eax ---- 5 - 5 = 0 (signflag(0))(zeroflag(1))
+	move eax, 9
 	cmp eax, 5		; 3 - 5 = -2 (signflag(1))(zeroflag(0))
-	jl lessThan5
+	jl lessThan5	; conditional branching statements
 	je equalTo5
 	jg greaterThan5
 
-lessThan5:
-	mov ebx, -1
-equalTo5:
+lessThan5:			
+	mov ebx, -1		; 0FFFFFFFFh
+	jmp done		; unconditional branching statements
+equalTo5:			; 5-5=0 will jump here
 	mov ebx, 0
-greaterThan5:
+	jmp done
+greaterThan5:		; move eax, 9 will jump here
 	mov ebx, 1
+	jmp done
+done:
 
-
-	ret
+	ret				; return statement - also a branch
 
 	; --------- Assembly Conditional Jumps -------------
 	; Compare Instructions(cmp) --- sign (1(negative) 0(Positive)), zero (1(0value) 0(not0value))
