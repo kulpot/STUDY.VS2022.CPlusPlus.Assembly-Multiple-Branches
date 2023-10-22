@@ -14,6 +14,9 @@ doit proc
 
 	move eax,																			
 	cmp eax, 5
+	jl lessThan5
+	je equalTo5
+	jg greaterThan5
 
 lessThan5:
 	mov ebx, -1
