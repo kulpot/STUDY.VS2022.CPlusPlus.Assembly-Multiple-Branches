@@ -12,7 +12,15 @@ doit proc
 	
 	; ----------- Assembly Multiple Branches --------------
 
+	move eax,																			
+	cmp eax, 5
 
+lessThan5:
+	mov ebx, -1
+equalTo5:
+	mov ebx, 0
+greaterThanFive:
+	mov ebx, 1
 
 
 
